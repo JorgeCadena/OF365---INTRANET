@@ -1,0 +1,44 @@
+﻿@model INTRANET_CR.Models.Cliente
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="card">
+    <div class="card-header">
+        <div class="d-sm-flex align-items-center justify-content-between mb-0">
+            <h4 class="card-title">¿Estás seguro que quieres eliminar esto?</h4>
+        </div>
+    </div>
+        <div class="card-body">           
+            
+        <div class="form-label">
+            @Html.DisplayNameFor(model => model.CliNombre)
+        </div>
+        <div class="col-sm-10">
+            @Html.DisplayFor(model => model.CliNombre)
+        </div>
+        <br />
+        <div class="form-label">
+            @Html.DisplayNameFor(model => model.CliRazonSocial)
+        </div>
+        <div class="col-sm-10">
+            @Html.DisplayFor(model => model.CliRazonSocial)
+        </div>
+           
+        </div>
+    <div class="card-footer">
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="CliCodigo" />
+            <input type="submit" value="Eliminar" class="btn btn-outline-primary " />
+            <a class="btn btn-outline-secondary float-end" asp-action="Index"><spam>Cancelar</spam></a>
+        </form>       
+    </div>
+       
+
+</div>
+
+

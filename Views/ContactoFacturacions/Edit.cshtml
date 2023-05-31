@@ -1,0 +1,59 @@
+﻿@model INTRANET_CR.Models.ContactoFacturacion
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>ContactoFacturacion</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CofCodigo" />
+            <div class="form-group">
+                <label asp-for="CofNombre" class="control-label"></label>
+                <input asp-for="CofNombre" class="form-control" />
+                <span asp-validation-for="CofNombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CofTelefono" class="control-label"></label>
+                <input asp-for="CofTelefono" class="form-control" />
+                <span asp-validation-for="CofTelefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CofMail" class="control-label"></label>
+                <input asp-for="CofMail" class="form-control" />
+                <span asp-validation-for="CofMail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CofDireccion" class="control-label"></label>
+                <input asp-for="CofDireccion" class="form-control" />
+                <span asp-validation-for="CofDireccion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CofEstado" class="control-label"></label>
+                <input asp-for="CofEstado" class="form-control" />
+                <span asp-validation-for="CofEstado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CliCodigo" class="control-label"></label>
+                <select asp-for="CliCodigo" class="form-control" asp-items="ViewBag.CliCodigo"></select>
+                <span asp-validation-for="CliCodigo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

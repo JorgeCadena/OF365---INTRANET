@@ -1,0 +1,79 @@
+﻿@model INTRANET_CR.Models.Contacto
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Contacto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CoCodigo" />
+            <div class="form-group">
+                <label asp-for="CoNombre" class="control-label"></label>
+                <input asp-for="CoNombre" class="form-control" />
+                <span asp-validation-for="CoNombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CoApellido" class="control-label"></label>
+                <input asp-for="CoApellido" class="form-control" />
+                <span asp-validation-for="CoApellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CoEmpresa" class="control-label"></label>
+                <input asp-for="CoEmpresa" class="form-control" />
+                <span asp-validation-for="CoEmpresa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CoTelefono" class="control-label"></label>
+                <input asp-for="CoTelefono" class="form-control" />
+                <span asp-validation-for="CoTelefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CoDireccion" class="control-label"></label>
+                <input asp-for="CoDireccion" class="form-control" />
+                <span asp-validation-for="CoDireccion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CoPais" class="control-label"></label>
+                <input asp-for="CoPais" class="form-control" />
+                <span asp-validation-for="CoPais" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CoCreador" class="control-label"></label>
+                <input asp-for="CoCreador" class="form-control" />
+                <span asp-validation-for="CoCreador" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CoFecha" class="control-label"></label>
+                <input asp-for="CoFecha" class="form-control" />
+                <span asp-validation-for="CoFecha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CoEstado" class="control-label"></label>
+                <input asp-for="CoEstado" class="form-control" />
+                <span asp-validation-for="CoEstado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmCodigo" class="control-label"></label>
+                <select asp-for="EmCodigo" class="form-control" asp-items="ViewBag.EmCodigo"></select>
+                <span asp-validation-for="EmCodigo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

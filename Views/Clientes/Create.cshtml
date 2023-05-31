@@ -1,0 +1,220 @@
+﻿@model INTRANET_CR.Models.Cliente
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <div class="d-sm-flex align-items-center justify-content-between mb-0">
+            <h4 class="card-title"><b>Nuevo</b> - Cliente</h4>
+        </div>
+    </div>
+    <form asp-action="Create">
+        <div class="card-body">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="CliNombre" class="form-label"></label>
+                        <input asp-for="CliNombre" class="form-control" />
+                        <span asp-validation-for="CliNombre" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="CliRazonSocial" class="form-label"></label>
+                        <input asp-for="CliRazonSocial" class="form-control" />
+                        <span asp-validation-for="CliRazonSocial" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="CliTipoIdentificacion" class="form-label"></label>
+                        @*<input asp-for="CliTipoIdentificacion" class="form-control" />*@
+                        @Html.DropDownList(
+                        "CliTipoIdentificacion",
+                        new List<SelectListItem>
+                        {
+                        new SelectListItem{ Text="RUC",Value = "RUC" },
+                        new SelectListItem{ Text="NIT",Value = "NIT" },
+                        new SelectListItem{ Text="Cédula",Value = "Cédula" }
+                        }, "Seleccione una opción",
+                        new { @class = "form-select"})
+                        <span asp-validation-for="CliTipoIdentificacion" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="CliIdentificacion" class="form-label"></label>
+                        <input asp-for="CliIdentificacion" class="form-control" />
+                        <span asp-validation-for="CliIdentificacion" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="CliEncargado" class="form-label"></label>
+                        @Html.DropDownList("CliEncargado", (IEnumerable
+                        <SelectListItem>)ViewData["CliEncargado"], "Seleccione una opción",
+                        new { @class = "form-select"})
+                        <span asp-validation-for="CliEncargado" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="CliComercial" class="form-label"></label>
+                        @Html.DropDownList("CliComercial", (IEnumerable
+                        <SelectListItem>)ViewData["CliComercial"], "Seleccione una opción",
+                        new { @class = "form-select"})
+                        <span asp-validation-for="CliComercial" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="CliPais" class="form-label"></label>
+                        @Html.DropDownList("CliPais", (IEnumerable
+                        <SelectListItem>)ViewData["CliPais"], "Seleccione una opción",
+                        new { @class = "form-select"})
+                        <span asp-validation-for="CliPais" class="text-danger"></span>                        
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="CliPostal" class="form-label"></label>
+                        <input asp-for="CliPostal" class="form-control" />
+                        <span asp-validation-for="CliPostal" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="CliImpuestos" class="form-label"></label>
+                        @Html.DropDownList(
+                        "CliImpuestos",
+                        new List<SelectListItem>
+                        {
+                        new SelectListItem{ Text="Sí",Value = "Sí" },
+                        new SelectListItem{ Text="No",Value = "No" }
+                        }, "Seleccione una opción",
+                        new { @class = "form-select"})
+                        <span asp-validation-for="CliImpuestos" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="CliCiudad" class="form-label"></label>
+                        <input asp-for="CliCiudad" class="form-control" />
+                        <span asp-validation-for="CliCiudad" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>            
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="CliDireccion" class="form-label"></label>
+                        <input asp-for="CliDireccion" class="form-control" />
+                        <span asp-validation-for="CliDireccion" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="CliTelefono" class="form-label"></label>
+                        <input asp-for="CliTelefono" class="form-control" />
+                        <span asp-validation-for="CliTelefono" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <h5 class="text-center">Contacto de facturación</h5>
+            <hr />
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="CliSolicitante" class="form-label"></label>
+                        <input asp-for="CliSolicitante" class="form-control" />
+                        <span asp-validation-for="CliSolicitante" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="CliTelefonoSol" class="form-label"></label>
+                        <input asp-for="CliTelefonoSol" class="form-control" />
+                        <span asp-validation-for="CliTelefonoSol" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="CliMailSol" class="form-label"></label>
+                        <input asp-for="CliMailSol" type="email" class="form-control" />
+                        <span asp-validation-for="CliMailSol" class="text-danger"></span>                    
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="CliDireccionSol" class="form-label"></label>
+                        <input asp-for="CliDireccionSol" class="form-control" />
+                        <span asp-validation-for="CliDireccionSol" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="CliTarifa" class="form-label"></label>
+                        @Html.DropDownList( "CliTarifa",
+                                             new List<SelectListItem>
+                                             {
+                                             new SelectListItem{ Text="Conecel",Value = "Conecel" },
+                                             new SelectListItem{ Text="Concel Competencia SCPM",Value = "Concel Competencia SCPM" },
+                                             new SelectListItem{ Text="Plana por Categorias",Value = "Plana por Categorias" },
+                                             new SelectListItem{ Text="S&N Quito",Value = "S&N Quito" },
+                                             new SelectListItem{ Text="Plana 130",Value = "Plana 130" },
+                                             new SelectListItem{ Text="Plana 150",Value = "Plana 150" },
+                                             new SelectListItem{ Text="Plana 180",Value = "Plana 180" },
+                                             new SelectListItem{ Text="Tarifa A Quito",Value = "Tarifa A Quito" },
+                                             new SelectListItem{ Text="Tarifa B Quito", Value = "Tarifa B Quito" },
+                                             new SelectListItem{ Text="Tarifa Base",Value = "Tarifa Base" },
+                                             new SelectListItem{ Text="Tarifa C Quito", Value = "Tarifa C Quito" },
+                                             new SelectListItem{ Text="Tarifa D Quito",Value = "Tarifa D Quito" },
+                                             new SelectListItem{ Text="Tarifa E Quito", Value = "Tarifa E Quito" },
+                                             new SelectListItem{ Text="Tarifa F", Value = "Tarifa F" },
+                                             new SelectListItem{ Text="Tarifa G/OBB Quito",Value = "Tarifa G/OBB Quito" },
+                                             new SelectListItem{ Text="Tarifa max.", Value = "Tarifa max." },
+                                             new SelectListItem{ Text="Amdocs", Value = "Amdocs" },
+                                             new SelectListItem{ Text="Tarifa plana", Value = "Tarifa plana" }
+                                             }, "Seleccione una opción",
+                                             new { @class = "form-select" })
+                        <span asp-validation-for="CliTarifa" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="CliDescuento" class="form-label"></label>
+                        <input asp-for="CliDescuento" type="number" class="form-control" />
+                        <span asp-validation-for="CliDescuento" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+                
+                
+            </div>
+        <div class="card-footer">
+            <input type="submit" value="Guardar" class="btn btn-outline-primary " />
+            <a class="btn btn-outline-secondary float-end" asp-action="Index"><spam>Cancelar</spam></a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

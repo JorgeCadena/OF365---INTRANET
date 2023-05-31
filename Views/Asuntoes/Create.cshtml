@@ -1,0 +1,654 @@
+﻿@model INTRANET_CR.Models.Asunto
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="border-bottom border-dashed pb-3 mb-4">
+    <div class="mb-6">
+        <h4 class="mb-4">Nuevo asunto</h4>
+        <form asp-action="Create">
+            <div class="border-bottom border-300 mb-4">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+               @* <input type="hidden" asp-for="AsuCodigo" />*@
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="AsuTitulo" class="form-label"></label>
+                            <input asp-for="AsuTitulo" class="form-control" />
+                            <span asp-validation-for="AsuTitulo" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="CliCodigo" class="form-label"></label>
+                            @Html.DropDownList("CliCodigo", (IEnumerable
+                            <SelectListItem>)ViewData["CliCodigo"], "Seleccione una opción",
+                            new { @class = "form-select"})
+                            @* <select class="form-select" id="CliCodigo" name="CliCodigo" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}'><option value="">Select organizer...</option></select>*@
+                            <span asp-validation-for="CliCodigo" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="AsuCategoria" class="form-label"></label>
+                            @Html.DropDownList(
+                            "AsuCategoria",
+                            new List<SelectListItem>
+                            {
+                            new SelectListItem{ Text="Asesoría",Value = "Asesoría" },
+                            new SelectListItem{ Text="Contrato",Value = "Contrato" }
+                            }, "Seleccione una opción",
+                            new { @class = "form-select"})
+                            <span asp-validation-for="AsuCategoria" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="AsuArea" class="form-label"></label>
+                            @Html.DropDownList(
+                            "AsuArea",
+                            new List<SelectListItem>
+                            {
+                            new SelectListItem{ Text="Administrativo",Value = "Administrativo" },
+                            new SelectListItem{ Text="Ambiental",Value = "Ambiental" }
+                            }, "Seleccione una opción",
+                            new { @class = "form-select"})
+                            <span asp-validation-for="AsuArea" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="AsuIdioma" class="form-label"></label>
+                            @Html.DropDownList(
+                            "AsuIdioma",
+                            new List<SelectListItem>
+                            {
+                            new SelectListItem{ Text="Español",Value = "Español" },
+                            new SelectListItem{ Text="Inglés",Value = "Inglés" }
+                            }, "Seleccione una opción",
+                            new { @class = "form-select"})
+                            <span asp-validation-for="AsuIdioma" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="AsuSucursal" class="form-label"></label>
+                            @Html.DropDownList(
+                            "AsuSucursal",
+                            new List<SelectListItem>
+                            {
+                            new SelectListItem{ Text="Quito",Value = "Quito" },
+                            new SelectListItem{ Text="Guayaquil",Value = "Guayaquil" }
+                            }, "Seleccione una opción",
+                            new { @class = "form-select"})
+                            <span asp-validation-for="AsuSucursal" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            @*<label asp-for="AsuResponsable" class="form-label"></label>
+                            <input asp-for="AsuResponsable" class="form-control" />
+                            <span asp-validation-for="AsuResponsable" class="text-danger"></span>*@
+                            <label asp-for="AsuResponsable" class="form-label"></label>
+                            @Html.DropDownList("AsuResponsable", (IEnumerable
+                            <SelectListItem>)ViewData["AsuResponsable"], "Seleccione una opción",
+                            new { @class = "form-select"})
+                            <span asp-validation-for="AsuResponsable" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="AsuCobrable" class="form-label"></label>
+                            @Html.DropDownList(
+                            "AsuCobrable",
+                            new List<SelectListItem>
+                            {
+                            new SelectListItem{ Text="Sí",Value = "Sí" },
+                            new SelectListItem{ Text="No",Value = "No" }
+                            }, "Seleccione una opción",
+                            new { @class = "form-select"})
+                            <span asp-validation-for="AsuCobrable" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="AsuDescripcion" class="form-label"></label>
+                            <input asp-for="AsuDescripcion" class="form-control" />
+                            <span asp-validation-for="AsuDescripcion" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <h5 class="text-center">Contacto de facturación</h5>
+                <hr />
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label class="form-label">Contacto</label>
+                            <select id="contacto" name="contacto" class="form-select"> </select>
+                            <span asp-validation-for="AsuNombreSol" class="text-danger"></span>
+                            <br />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <br />
+                        <button class="btn btn-phoenix-primary px-3" type="button"><span class="fa-solid fa-user-plus me-2"></span></button>
+                        <input type="hidden" asp-for="AsuNombreSol" />
+                        <input type="hidden" asp-for="AsuMailSol" />
+                        <input type="hidden" asp-for="AsuDireccionSol" />
+                        <input type="hidden" asp-for="AsuTelefonoSol" />
+                        <input type="hidden" asp-for="AsuFormaLiquidacion" />
+                    </div>
+                </div>
+                @* <div class="row">
+                <div class="col">
+                <div class="form-group">
+                <label asp-for="AsuNombreSol" class="form-label"></label>
+                <input asp-for="AsuNombreSol" class="form-control" />
+                <span asp-validation-for="AsuNombreSol" class="text-danger"></span>
+                </div>
+                </div>
+                <div class="col">
+
+                </div>
+                </div>*@
+                @* <div class="row">
+                <div class="col">
+                <div class="form-group">
+                <label asp-for="AsuMailSol" class="form-label"></label>
+                <input asp-for="AsuMailSol" class="form-control" />
+                <span asp-validation-for="AsuMailSol" class="text-danger"></span>
+                </div>
+                </div>
+                <div class="col">
+                <div class="form-group">
+                <label asp-for="AsuDireccionSol" class="form-label"></label>
+                <input asp-for="AsuDireccionSol" class="form-control" />
+                <span asp-validation-for="AsuDireccionSol" class="text-danger"></span>
+                </div>
+                </div>
+                </div>*@
+                <hr />
+                <h5 class="text-center">Datos de tarificación</h5>
+                <hr />
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="AsuMoneda" class="form-label"></label>
+                            @Html.DropDownList(
+                            "AsuMoneda",
+                            new List<SelectListItem>
+                            {
+                            new SelectListItem{ Text="Dolar",Value = "Dolar" },
+                            new SelectListItem{ Text="Euro",Value = "Euro" }
+                            }, "Seleccione una opción",
+                            new { @class = "form-select"})
+                            <span asp-validation-for="AsuMoneda" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="AsuTarifa" class="form-label"></label>
+                            @Html.DropDownList(
+                            "AsuTarifa",
+                            new List<SelectListItem>
+                            {
+                            new SelectListItem{ Text="Conecel",Value = "Conecel" },
+                            new SelectListItem{ Text="Concel Competencia SCPM",Value = "Concel Competencia SCPM" },
+                            new SelectListItem{ Text="Plana por Categorias",Value = "Plana por Categorias" },
+                            new SelectListItem{ Text="S&N Quito",Value = "S&N Quito" },
+                            new SelectListItem{ Text="Plana 130",Value = "Plana 130" },
+                            new SelectListItem{ Text="Plana 150",Value = "Plana 150" },
+                            new SelectListItem{ Text="Plana 180",Value = "Plana 180" },
+                            new SelectListItem{ Text="Tarifa A Quito",Value = "Tarifa A Quito" },
+                            new SelectListItem{ Text="Tarifa B Quito", Value = "Tarifa B Quito" },
+                            new SelectListItem{ Text="Tarifa Base",Value = "Tarifa Base" },
+                            new SelectListItem{ Text="Tarifa C Quito", Value = "Tarifa C Quito" },
+                            new SelectListItem{ Text="Tarifa D Quito",Value = "Tarifa D Quito" },
+                            new SelectListItem{ Text="Tarifa E Quito", Value = "Tarifa E Quito" },
+                            new SelectListItem{ Text="Tarifa F", Value = "Tarifa F" },
+                            new SelectListItem{ Text="Tarifa G/OBB Quito",Value = "Tarifa G/OBB Quito" },
+                            new SelectListItem{ Text="Tarifa max.", Value = "Tarifa max." },
+                            new SelectListItem{ Text="Amdocs", Value = "Amdocs" },
+                            new SelectListItem{ Text="Tarifa plana", Value = "Tarifa plana" }
+                            }, "Seleccione una opción",
+                            new { @class = "form-select"})
+                            <span asp-validation-for="AsuTarifa" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="AsuDescuento" class="form-label"></label>
+                            <input asp-for="AsuDescuento" class="form-control" />
+                            <span asp-validation-for="AsuDescuento" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="AsuImpuestos" class="form-label"></label>
+                            @Html.DropDownList(
+                            "AsuImpuestos",
+                            new List<SelectListItem>
+                            {
+                            new SelectListItem{ Text="Sí",Value = "Sí" },
+                            new SelectListItem{ Text="No",Value = "No" }
+                            }, "Seleccione una opción",
+                            new { @class = "form-select"})
+                            <span asp-validation-for="AsuImpuestos" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-sm-4">
+                        <div class="form-group">
+                            <br />
+                            <p class="text-end">
+                                <label asp-for="AsuFormaLiquidacion" class="form-label"></label>:
+                            </p>
+                            <br />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <br />
+                            <p class="text-start">
+                                <button class="btn btn-outline-primary option1 p-2" data-toggle="tooltip" data-placement="bottom" title="En esta modalidad se cobra hora a hora. Cada profesional tiene asignada su propia tarifa para cada asunto." id="btnTasas" type="button" @*data-toggle="collapse" data-target="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample1"*@>Por horas</button>
+                                <button class="btn btn-outline-primary option2 p-2" data-toggle="tooltip" data-placement="bottom" title="El Cliente acuerda cancelar un monto fijo mensual por atender todos los trabajos de este asunto. Puede tener limites por HH o monto total." id="btnFlat" type="button" @*data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2"*@>Monto fijo por asunto</button>
+                                <button class="btn btn-outline-primary option3 p-2" data-toggle="tooltip" data-placement="bottom" title="Esta forma de cobro permite determinar un tope o techo de monto para un proyecto, de manera tal que con el cliente se pueda pactar un monto máximo en este tipo de contratos el cual se alcanzará en medida que se vayan liquidando las horas, siempre en THH según la tarifa seleccionada." id="btnCap" type="button" @*data-toggle="collapse" data-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample3"*@>Horas con CAP</button>
+                                <button class="btn btn-outline-primary option4 p-2" data-toggle="tooltip" data-placement="bottom" title="El Cliente compra un número de horas, el exceso de horas trabajadas se cobra proporcional a la duración de cada trabajo." id="btnPro" type="button" @*data-toggle="collapse" data-target="#multiCollapseExample4" aria-expanded="false" aria-controls="multiCollapseExample4"*@>Proporcional</button>
+                                <button class="btn btn-outline-primary option5 p-2" data-toggle="tooltip" data-placement="bottom" title="Esta forma de cobro permite programar liquidaciones en un proyecto o juicio. Se debe definir una fecha, descripción y monto en cada hito del proyeccto o juicio. El día de cada hito el sistema gatillará un correo al Encargado Comercial para que él determine si corresponde facturar dicho hito. Los contratos de tipo hitos, no seran parte de una generación masiva de liquidaciones." id="btnHit" type="submit" contextmenu="" @*data-toggle="collapse" data-target="#multiCollapseExample5" aria-expanded="false" aria-controls="multiCollapseExample5"*@>Hitos o etapas</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="collapse multi-collapse" id="multiCollapseExample1">
+                            <div class="card card-body">
+                                <div class="form-group">
+                                    <label asp-for="AsuFeeMonto" class="form-label"></label>
+                                    <input asp-for="AsuFeeMonto" class="form-control" />
+                                    <span asp-validation-for="AsuFeeMonto" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="collapse multi-collapse" id="multiCollapseExample2">
+                            <div class="card card-body">
+                                <div class="form-group">
+                                    <label asp-for="AsuFeePeriodicidad" class="form-label"></label>
+                                    @Html.DropDownList(
+                                    "AsuFeePeriodicidad",
+                                    new List<SelectListItem>
+                                    {
+                                    new SelectListItem{ Text="Mensual",Value = "Mensual" },
+                                    new SelectListItem{ Text="Anual",Value = "Anual" }
+                                    }, "Seleccione una opción",
+                                    new { @class = "form-select"})
+                                    <span asp-validation-for="AsuFeePeriodicidad" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="collapse multi-collapse-pro" id="multiCollapseExample3">
+                            <div class="card card-body">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label asp-for="AsuMontoMaximo" class="form-label"></label>
+                                        <input asp-for="AsuMontoMaximo" class="form-control" />
+                                        <span asp-validation-for="AsuMontoMaximo" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="collapse multi-collapse-pro" id="multiCollapseExample4">
+                            <div class="card card-body">
+                                <div class="form-group">
+                                    <label asp-for="AsuHorasMaximo" class="form-label"></label>
+                                    <input asp-for="AsuHorasMaximo" class="form-control" />
+                                    <span asp-validation-for="AsuHorasMaximo" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @*<div class="row">
+                <div class="col">
+                <div class="form-group">
+                <label asp-for="AsuFormaLiquidacion" class="form-label"></label>
+                <input asp-for="AsuFormaLiquidacion" class="form-control" />
+                <span asp-validation-for="AsuFormaLiquidacion" class="text-danger"></span>
+                </div>
+                </div>
+                </div>    *@
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="AsuDetalleCobranza" class="form-label"></label>
+                            <input asp-for="AsuDetalleCobranza" class="form-control" />
+                            <span asp-validation-for="AsuDetalleCobranza" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-end mb-6">
+                <a class="btn btn-phoenix-secondary" asp-action="Index"><spam>Cancelar cambios</spam></a>
+                <input type="submit" value="Guardar información" class="btn btn-phoenix-primary" />
+            </div>
+        </form>
+    </div>   
+</div>
+
+
+
+@section Scripts{
+    
+    <script>
+        $(function () {
+            $(".datepicker").datepicker({
+                dateFormat: "dd/mm/yy",
+                changeMonth: true,
+                changeYear: true,
+                yearRange: "2018:2030"
+            });
+        });
+      
+        $(document).ready(function () {
+            var id = $("#CliCodigo").val();
+            //$("#AsuFormaLiquidacion").val("Tasas/HH");
+           
+            var input = $("#AsuFormaLiquidacion").val()
+            if (input == "Por Horas") {
+                //alert(" " + input + " tasas ");
+                $("#AsuFormaLiquidacion").val("Por Horas");
+                $("#AsuFeePeriodicidad").val("Mensual");
+                $("#AsuMontoMaximo").val("");
+                $("#AsuHorasMaximo").val("");
+                $("#AsuFeeMonto").val("");
+                $(".option1").addClass("active")
+                $(".option2").removeClass("active")
+                $(".option3").removeClass("active")
+                $(".option4").removeClass("active")
+                $(".option5").removeClass("active")
+                $("#multiCollapseExample1").collapse('hide');
+                $("#multiCollapseExample2").collapse('hide');
+                $("#multiCollapseExample3").collapse('hide');
+                $("#multiCollapseExample4").collapse('hide');
+                $("#multiCollapseExample5").collapse('hide');
+            }
+            else if (input == "Monto Fijo Mensual") {
+                $("#AsuFormaLiquidacion").val("Monto Fijo Mensual");
+                $(".option1").removeClass("active")
+                $(".option2").addClass("active")
+                $(".option3").removeClass("active")
+                $(".option4").removeClass("active")
+                $(".option5").removeClass("active")
+                $("#multiCollapseExample1").collapse('show');
+                $("#multiCollapseExample2").collapse('show');
+                $("#multiCollapseExample3").collapse('hide');
+                $("#multiCollapseExample4").collapse('hide');
+                $("#multiCollapseExample5").collapse('hide');
+            }
+            else if (input == "Por Horas Con CAP") {
+                $("#AsuFormaLiquidacion").val("Por Horas Con CAP");
+                $("#AsuFeePeriodicidad").val("Mensual");
+                $(".option1").removeClass("active")
+                $(".option2").removeClass("active")
+                $(".option3").addClass("active")
+                $(".option4").removeClass("active")
+                $(".option5").removeClass("active")
+                $("#multiCollapseExample1").collapse('hide');
+                $("#multiCollapseExample2").collapse('hide');
+                $("#multiCollapseExample3").collapse('show');
+                $("#multiCollapseExample4").collapse('hide');
+                $("#multiCollapseExample5").collapse('hide');
+            }
+            else if (input == "Proporcional") {                
+                $("#AsuFormaLiquidacion").val("Proporcional");
+                $("#AsuFeePeriodicidad").val("Mensual");
+                $(".option1").removeClass("active")
+                $(".option2").removeClass("active")
+                $(".option3").removeClass("active")
+                $(".option4").addClass("active")
+                $(".option5").removeClass("active")
+                $("#multiCollapseExample1").collapse('hide');
+                $("#multiCollapseExample2").collapse('hide');
+                $("#multiCollapseExample3").collapse('show');
+                $("#multiCollapseExample4").collapse('show');
+                $("#multiCollapseExample5").collapse('hide');
+            }
+            else if (input == "Por Hitos o Etapas") {
+                $("#AsuFormaLiquidacion").val("Por Hitos o Etapas");
+                $("#AsuFeePeriodicidad").val("Mensual");
+                $(".option1").removeClass("active")
+                $(".option2").removeClass("active")
+                $(".option3").removeClass("active")
+                $(".option4").removeClass("active")
+                $(".option5").addClass("active")
+                $("#multiCollapseExample1").collapse('hide');
+                $("#multiCollapseExample2").collapse('hide');
+                $("#multiCollapseExample3").collapse('hide');
+                $("#multiCollapseExample4").collapse('hide');
+                $("#multiCollapseExample5").collapse('show');
+            }
+            else if (input == "" || input == null) {
+                $("#AsuFormaLiquidacion").val("Por Horas");
+                $("#AsuFeePeriodicidad").val("Mensual");
+                $("#AsuMontoMaximo").val("");
+                $("#AsuHorasMaximo").val("");
+                $("#AsuFeeMonto").val("");
+                $(".option1").addClass("active")
+                $(".option2").removeClass("active")
+                $(".option3").removeClass("active")
+                $(".option4").removeClass("active")
+                $(".option5").removeClass("active")
+                $("#multiCollapseExample1").collapse('hide');
+                $("#multiCollapseExample2").collapse('hide');
+                $("#multiCollapseExample3").collapse('hide');
+                $("#multiCollapseExample4").collapse('hide');
+                $("#multiCollapseExample5").collapse('hide');
+            }
+        });
+
+        $(".option1").click(function () {
+            $("#AsuFormaLiquidacion").val("Por Horas");
+            $("#AsuFeePeriodicidad").val("Mensual");
+            $("#AsuMontoMaximo").val("");
+            $("#AsuHorasMaximo").val("");
+            $("#AsuFeeMonto").val("");
+            $(".option1").addClass("active")
+            $(".option2").removeClass("active")
+            $(".option3").removeClass("active")
+            $(".option4").removeClass("active")
+            $(".option5").removeClass("active")
+            $("#multiCollapseExample1").collapse('hide');
+            $("#multiCollapseExample2").collapse('hide');
+            $("#multiCollapseExample3").collapse('hide');
+            $("#multiCollapseExample4").collapse('hide');
+            $("#multiCollapseExample5").collapse('hide');
+        });
+        $(".option2").click(function () {
+            $("#AsuFormaLiquidacion").val("Monto Fijo Mensual");
+            $("#AsuFeePeriodicidad").val("");
+            $("#AsuMontoMaximo").val("");
+            $("#AsuHorasMaximo").val("");
+            $("#AsuFeeMonto").val("");
+            $(".option1").removeClass("active")
+            $(".option2").addClass("active")
+            $(".option3").removeClass("active")
+            $(".option4").removeClass("active")
+            $(".option5").removeClass("active")
+            $("#multiCollapseExample1").collapse('show');
+            $("#multiCollapseExample2").collapse('show');
+            $("#multiCollapseExample3").collapse('hide');
+            $("#multiCollapseExample4").collapse('hide');
+            $("#multiCollapseExample5").collapse('hide');
+        });
+        $(".option3").click(function () {
+            $("#AsuFormaLiquidacion").val("Por Horas Con CAP");
+            $("#AsuFeePeriodicidad").val("Mensual");
+            $("#AsuMontoMaximo").val("");
+            $("#AsuHorasMaximo").val("");
+            $("#AsuFeeMonto").val("");
+            $(".option1").removeClass("active")
+            $(".option2").removeClass("active")
+            $(".option3").addClass("active")
+            $(".option4").removeClass("active")
+            $(".option5").removeClass("active")
+            $("#multiCollapseExample1").collapse('hide');
+            $("#multiCollapseExample2").collapse('hide');
+            $("#multiCollapseExample3").collapse('show');
+            $("#multiCollapseExample4").collapse('hide');
+            $("#multiCollapseExample5").collapse('hide');
+        });
+        $(".option4").click(function () {
+            $("#AsuFormaLiquidacion").val("Proporcional");
+            $("#AsuFeePeriodicidad").val("Mensual");
+            $("#AsuMontoMaximo").val("");
+            $("#AsuHorasMaximo").val("");
+            $("#AsuFeeMonto").val("");
+            $(".option1").removeClass("active")
+            $(".option2").removeClass("active")
+            $(".option3").removeClass("active")
+            $(".option4").addClass("active")
+            $(".option5").removeClass("active")
+            $("#multiCollapseExample1").collapse('hide');
+            $("#multiCollapseExample2").collapse('hide');
+            $("#multiCollapseExample3").collapse('show');
+            $("#multiCollapseExample4").collapse('show');
+            $("#multiCollapseExample5").collapse('hide');
+        });
+        $(".option5").click(function () {
+
+            $("#AsuFormaLiquidacion").val("Por Hitos o Etapas");
+            $("#AsuFeePeriodicidad").val("Mensual");
+            $("#AsuMontoMaximo").val("");
+            $("#AsuHorasMaximo").val("");
+            $("#AsuFeeMonto").val("");
+            $(".option1").removeClass("active")
+            $(".option2").removeClass("active")
+            $(".option3").removeClass("active")
+            $(".option4").removeClass("active")
+            $(".option5").addClass("active")
+            $("#multiCollapseExample1").collapse('hide');
+            $("#multiCollapseExample2").collapse('hide');
+            $("#multiCollapseExample3").collapse('hide');
+            $("#multiCollapseExample4").collapse('hide');
+            $("#multiCollapseExample5").collapse('show');
+        });
+
+        $("#contacto").change(function () {
+           ContactoFrefresh();
+        });
+
+        $("#CliCodigo").change(function () {
+            var id = $("#CliCodigo").val();
+            var url = "/Asuntos/GetSolicitante/" + id;
+            //$("#AsuNombreSol").val(id);
+            $.ajax({
+                type: "GET",
+                url: url,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (clientes) {
+                    //alert('Funciona');
+                    if (clientes != null) {                       
+                        $("#AsuTarifa").val(clientes.CliTarifa);
+                    } else {
+                        alert("Vale pero no muestra");
+                    }
+                },
+                failure: function (clientes) {
+                    alert('No Algo salio mal');
+                    //alert(clientes);
+                },
+                error: function (clientes) {
+                    alert('Error');
+                    //alert(clientes);
+                }
+            });
+
+
+        });
+
+        var cboCliente = document.getElementById("CliCodigo");
+        cboCliente.addEventListener("change", Refresh)
+        Refresh();       
+        function Refresh(){
+            $("#AsuNombreSol").val("");
+            $("#AsuMailSol").val("");
+            $("#AsuDireccionSol").val("");
+            $("#AsuTelefonoSol").val("");
+            fetch("@Url.Content("~/Asuntos/Contacto")" + "?IdCliente=" + cboCliente.value)
+            .then(function (result)
+            {
+                if (result.ok) {
+                    return result.json();
+                }
+            })
+            .then(function(data){
+                console.log(data);
+                cbo = document.getElementById("contacto");
+                cbo.innerHTML = "";
+                data.forEach(function(element){
+                    let cbo = document.getElementById("contacto");
+                    let opt = document.createElement("option");
+                    opt.appendChild(document.createTextNode(element.Text));
+                    opt.value = element.Value;
+                    cbo.appendChild(opt);
+                    ContactoFrefresh();
+                })
+            })
+        }
+        function ContactoFrefresh(){
+            var id = $("#contacto").val();
+            var url = "/Asuntos/GetContacto/" + id;
+            //$("#AsuNombreSol").val(id);
+            $.ajax({
+                type: "GET",
+                url: url,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (contacto) {                    
+                    if (contacto != null) {
+                        $("#AsuNombreSol").val(contacto.CofNombre);
+                        $("#AsuMailSol").val(contacto.CofMail);
+                        $("#AsuDireccionSol").val(contacto.CofDireccion);
+                        $("#AsuTelefonoSol").val(contacto.CofTelefono);
+                    } else {                       
+                        alert("Vale pero no muestra");
+                    }
+                },
+                failure: function (clientes) {
+                    alert('No Algo salio mal');
+                    //alert(clientes);
+                },
+                error: function (clientes) {
+                    alert('Error');
+                    //alert(clientes);
+                }
+            });
+        }
+    </script>
+}

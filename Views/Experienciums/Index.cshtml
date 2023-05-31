@@ -1,0 +1,167 @@
+﻿@model IEnumerable<INTRANET_CR.Models.Experiencium>
+
+@{
+    ViewData["Title"] = "Experiencia";
+}
+
+<div class="card" style="width:100%;">
+    <div class="card-header">
+        <div class="d-sm-flex align-items-center justify-content-between mb-0">
+            <h4 class="card-title"><b>Experiencia</b></h4>
+            <a href="@Url.Action("Create")" class="d-none d-sm-inline-block btn btn-sm btn-outline-primary shadow-sm mx-0">@*<i class="fas fa-plus fa-sm"></i>*@ Crear</a>
+        </div>
+    </div>
+    <div class="card-body dataTables_scroll">
+        <table id="table" class="table table-striped table-sm fs--1 mb-0" style="width:100%; font-size:0.9rem">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ExEmpresa)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ExDireccion)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ExTelefono)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ExCargoinicial)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ExSueldoinicial)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ExCargofinal)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ExSueldofinal)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ExMotivorenuncia)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ExEstado)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ExDescripcion)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ExTiempo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.UsCodigoNavigation)
+                    </th>
+                    <th></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ExEmpresa)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ExDireccion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ExTelefono)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ExCargoinicial)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ExSueldoinicial)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ExCargofinal)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ExSueldofinal)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ExMotivorenuncia)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ExEstado)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ExDescripcion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ExTiempo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UsCodigoNavigation.UsApellido1)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.ExCodigo">Editar</a> |
+                            <a asp-action="Details" asp-route-id="@item.ExCodigo">Ver</a> |
+                            <a asp-action="Delete" asp-route-id="@item.ExCodigo">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
+@section scripts{
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.colVis.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.flash.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.print.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#table').DataTable({
+                responsive: true,
+                colReorder: true,
+                "autoWidth": true,
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json",
+                    searchPlaceholder: "Buscar"
+                },
+                "order": [[0, "desc"]],
+                "dom": 'Bftip',
+                "buttons": [
+
+                    {
+                        extend: 'excelHtml5',
+                        className: 'btn btn-dark rounded-0',
+                        text: '<i class="far fa-file-excel"></i>',
+                        className: 'btn btn-success'
+                    },
+                    {
+                        extend: 'pdf',
+                        className: 'btn btn-dark rounded-0',
+                        text: '<i class="far fa-file-pdf"></i>',
+                        className: 'btn btn-danger'
+                    },
+                    {
+                        extend: 'print',
+                        className: 'btn btn-dark rounded-0',
+                        text: '<i class="fas fa-print"></i>',
+                        className: 'btn btn-info'
+                    }
+                ],
+                "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "Todo"]],
+            });
+        });
+
+    </script>
+
+}
+
+

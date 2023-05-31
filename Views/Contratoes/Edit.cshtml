@@ -1,0 +1,89 @@
+﻿@model INTRANET_CR.Models.Contrato
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Contrato</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CoCodigo" />
+            <div class="form-group">
+                <label asp-for="CoTipo" class="control-label"></label>
+                <input asp-for="CoTipo" class="form-control" />
+                <span asp-validation-for="CoTipo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CoInicio" class="control-label"></label>
+                <input asp-for="CoInicio" class="form-control" />
+                <span asp-validation-for="CoInicio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CoFin" class="control-label"></label>
+                <input asp-for="CoFin" class="form-control" />
+                <span asp-validation-for="CoFin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CoSueldo" class="control-label"></label>
+                <input asp-for="CoSueldo" class="form-control" />
+                <span asp-validation-for="CoSueldo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CoBono" class="control-label"></label>
+                <input asp-for="CoBono" class="form-control" />
+                <span asp-validation-for="CoBono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CoMotivoSalida" class="control-label"></label>
+                <input asp-for="CoMotivoSalida" class="form-control" />
+                <span asp-validation-for="CoMotivoSalida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CoLiquidacion" class="control-label"></label>
+                <input asp-for="CoLiquidacion" class="form-control" />
+                <span asp-validation-for="CoLiquidacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CoObservacion" class="control-label"></label>
+                <input asp-for="CoObservacion" class="form-control" />
+                <span asp-validation-for="CoObservacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CoEstado" class="control-label"></label>
+                <input asp-for="CoEstado" class="form-control" />
+                <span asp-validation-for="CoEstado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CoUbicacion" class="control-label"></label>
+                <input asp-for="CoUbicacion" class="form-control" />
+                <span asp-validation-for="CoUbicacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CoExtension" class="control-label"></label>
+                <input asp-for="CoExtension" class="form-control" />
+                <span asp-validation-for="CoExtension" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsCodigo" class="control-label"></label>
+                <select asp-for="UsCodigo" class="form-control" asp-items="ViewBag.UsCodigo"></select>
+                <span asp-validation-for="UsCodigo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,161 @@
+﻿@model INTRANET_CR.Models.Asunto
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="AsuCodigo" />
+            <div class="form-group">
+                <label asp-for="AsuTitulo" class="control-label"></label>
+                <input asp-for="AsuTitulo" class="form-control" />
+                <span asp-validation-for="AsuTitulo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsuIdioma" class="control-label"></label>
+                <input asp-for="AsuIdioma" class="form-control" />
+                <span asp-validation-for="AsuIdioma" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsuCategoria" class="control-label"></label>
+                <input asp-for="AsuCategoria" class="form-control" />
+                <span asp-validation-for="AsuCategoria" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsuArea" class="control-label"></label>
+                <input asp-for="AsuArea" class="form-control" />
+                <span asp-validation-for="AsuArea" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsuSucursal" class="control-label"></label>
+                <input asp-for="AsuSucursal" class="form-control" />
+                <span asp-validation-for="AsuSucursal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsuResponsable" class="control-label"></label>
+                <input asp-for="AsuResponsable" class="form-control" />
+                <span asp-validation-for="AsuResponsable" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsuDescripcion" class="control-label"></label>
+                <input asp-for="AsuDescripcion" class="form-control" />
+                <span asp-validation-for="AsuDescripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsuMoneda" class="control-label"></label>
+                <input asp-for="AsuMoneda" class="form-control" />
+                <span asp-validation-for="AsuMoneda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsuFormaLiquidacion" class="control-label"></label>
+                <input asp-for="AsuFormaLiquidacion" class="form-control" />
+                <span asp-validation-for="AsuFormaLiquidacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsuFeeMonto" class="control-label"></label>
+                <input asp-for="AsuFeeMonto" class="form-control" />
+                <span asp-validation-for="AsuFeeMonto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsuFeePeriodicidad" class="control-label"></label>
+                <input asp-for="AsuFeePeriodicidad" class="form-control" />
+                <span asp-validation-for="AsuFeePeriodicidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsuMontoMaximo" class="control-label"></label>
+                <input asp-for="AsuMontoMaximo" class="form-control" />
+                <span asp-validation-for="AsuMontoMaximo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsuHorasMaximo" class="control-label"></label>
+                <input asp-for="AsuHorasMaximo" class="form-control" />
+                <span asp-validation-for="AsuHorasMaximo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsuDetalleCobranza" class="control-label"></label>
+                <input asp-for="AsuDetalleCobranza" class="form-control" />
+                <span asp-validation-for="AsuDetalleCobranza" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsuEstado" class="control-label"></label>
+                <input asp-for="AsuEstado" class="form-control" />
+                <span asp-validation-for="AsuEstado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsuCliente" class="control-label"></label>
+                <input asp-for="AsuCliente" class="form-control" />
+                <span asp-validation-for="AsuCliente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsuTarifa" class="control-label"></label>
+                <input asp-for="AsuTarifa" class="form-control" />
+                <span asp-validation-for="AsuTarifa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsuNombreSol" class="control-label"></label>
+                <input asp-for="AsuNombreSol" class="form-control" />
+                <span asp-validation-for="AsuNombreSol" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsuMailSol" class="control-label"></label>
+                <input asp-for="AsuMailSol" class="form-control" />
+                <span asp-validation-for="AsuMailSol" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsuDireccionSol" class="control-label"></label>
+                <input asp-for="AsuDireccionSol" class="form-control" />
+                <span asp-validation-for="AsuDireccionSol" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsuTelefonoSol" class="control-label"></label>
+                <input asp-for="AsuTelefonoSol" class="form-control" />
+                <span asp-validation-for="AsuTelefonoSol" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsuCobrable" class="control-label"></label>
+                <input asp-for="AsuCobrable" class="form-control" />
+                <span asp-validation-for="AsuCobrable" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsuDescuento" class="control-label"></label>
+                <input asp-for="AsuDescuento" class="form-control" />
+                <span asp-validation-for="AsuDescuento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsuImpuestos" class="control-label"></label>
+                <input asp-for="AsuImpuestos" class="form-control" />
+                <span asp-validation-for="AsuImpuestos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsuCodigoSecundario" class="control-label"></label>
+                <input asp-for="AsuCodigoSecundario" class="form-control" />
+                <span asp-validation-for="AsuCodigoSecundario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsuCreador" class="control-label"></label>
+                <input asp-for="AsuCreador" class="form-control" />
+                <span asp-validation-for="AsuCreador" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CliCodigo" class="control-label"></label>
+                <select asp-for="CliCodigo" class="form-control" asp-items="ViewBag.CliCodigo"></select>
+                <span asp-validation-for="CliCodigo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,84 @@
+﻿@model INTRANET_CR.Models.Ticket
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Ticket</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TicTitulo" class="control-label"></label>
+                <input asp-for="TicTitulo" class="form-control" />
+                <span asp-validation-for="TicTitulo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TicDescripcion" class="control-label"></label>
+                <input asp-for="TicDescripcion" class="form-control" />
+                <span asp-validation-for="TicDescripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TicTipo" class="control-label"></label>
+                <input asp-for="TicTipo" class="form-control" />
+                <span asp-validation-for="TicTipo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TicPrioridad" class="control-label"></label>
+                <input asp-for="TicPrioridad" class="form-control" />
+                <span asp-validation-for="TicPrioridad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TicTecnico" class="control-label"></label>
+                <input asp-for="TicTecnico" class="form-control" />
+                <span asp-validation-for="TicTecnico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TicUsuario" class="control-label"></label>
+                <input asp-for="TicUsuario" class="form-control" />
+                <span asp-validation-for="TicUsuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TicCalificacion" class="control-label"></label>
+                <input asp-for="TicCalificacion" class="form-control" />
+                <span asp-validation-for="TicCalificacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TicInicio" class="control-label"></label>
+                <input asp-for="TicInicio" class="form-control" />
+                <span asp-validation-for="TicInicio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TicTiempo" class="control-label"></label>
+                <input asp-for="TicTiempo" class="form-control" />
+                <span asp-validation-for="TicTiempo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TicEstado" class="control-label"></label>
+                <input asp-for="TicEstado" class="form-control" />
+                <span asp-validation-for="TicEstado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TicFin" class="control-label"></label>
+                <input asp-for="TicFin" class="form-control" />
+                <span asp-validation-for="TicFin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsCodigo" class="control-label"></label>
+                <select asp-for="UsCodigo" class ="form-control" asp-items="ViewBag.UsCodigo"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

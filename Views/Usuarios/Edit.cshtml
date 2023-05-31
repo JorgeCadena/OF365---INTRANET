@@ -1,0 +1,128 @@
+﻿@model INTRANET_CR.Models.Usuario
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<div class="card">
+    <div class="card-header">
+        <div class="d-sm-flex align-items-center justify-content-between mb-0">
+            <h4 class="card-title"><b>Editar</b> - Usuario</h4>
+        </div>
+    </div>
+
+
+    <form asp-action="Edit">
+        <div class="card-body">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="UsCodigo" />
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        @*<label asp-for="Id" class="form-label"></label>
+                        <select asp-for="Id" class="form-control" asp-items="ViewBag.Id"></select>
+                        <input type="hidden" id="idC" name="idC" value="@ViewData["idC"]" />*@
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="UsNombre1" class="form-label"></label>
+                        <input asp-for="UsNombre1" class="form-control" />
+                        <span asp-validation-for="UsNombre1" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="UsNombre2" class="form-label"></label>
+                        <input asp-for="UsNombre2" class="form-control" />
+                        <span asp-validation-for="UsNombre2" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="UsNombre3" class="form-label"></label>
+                        <input asp-for="UsNombre3" class="form-control" />
+                        <span asp-validation-for="UsNombre3" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="UsApellido1" class="form-label"></label>
+                        <input asp-for="UsApellido1" class="form-control" />
+                        <span asp-validation-for="UsApellido1" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="UsApellido2" class="form-label"></label>
+                        <input asp-for="UsApellido2" class="form-control" />
+                        <span asp-validation-for="UsApellido2" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="UsEstado" class="form-label"></label>
+                        <input asp-for="UsEstado" class="form-control" />
+                        <span asp-validation-for="UsEstado" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="EmCodigo" class="form-label"></label>
+                        <select asp-for="EmCodigo" class="form-control" asp-items="ViewBag.EmCodigo"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="UsJefe" class="form-label"></label>
+                        <input asp-for="UsJefe" class="form-control" />
+                        <span asp-validation-for="UsJefe" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="UsGerencia" class="form-label"></label>
+                        <input asp-for="UsGerencia" class="form-control" />
+                        <span asp-validation-for="UsGerencia" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="UsCambio" class="form-label"></label>
+                        <input asp-for="UsCambio" class="form-control" />
+                        <span asp-validation-for="UsCambio" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="UsTerminos" class="form-label"></label>
+                        <input asp-for="UsTerminos" class="form-control" />
+                        <span asp-validation-for="UsTerminos" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="card-footer">
+
+            <input type="submit" value="Guardar" class="btn btn-outline-primary" />
+            <a class="btn btn-outline-secondary float-end" asp-action="Index"><spam>Cancelar</spam></a>
+        </div>
+    </form>
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,81 @@
+﻿@model INTRANET_CR.Models.Educacion
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Educacion</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="EdCodigo" />
+            <div class="form-group">
+                <label asp-for="EdTipo" class="control-label"></label>
+                <input asp-for="EdTipo" class="form-control" />
+                <span asp-validation-for="EdTipo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EdNivel" class="control-label"></label>
+                <input asp-for="EdNivel" class="form-control" />
+                <span asp-validation-for="EdNivel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EdPlantel" class="control-label"></label>
+                <input asp-for="EdPlantel" class="form-control" />
+                <span asp-validation-for="EdPlantel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EdCiudad" class="control-label"></label>
+                <input asp-for="EdCiudad" class="form-control" />
+                <span asp-validation-for="EdCiudad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EdInicio" class="control-label"></label>
+                <input asp-for="EdInicio" class="form-control" />
+                <span asp-validation-for="EdInicio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EdFin" class="control-label"></label>
+                <input asp-for="EdFin" class="form-control" />
+                <span asp-validation-for="EdFin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EdTitulo" class="control-label"></label>
+                <input asp-for="EdTitulo" class="form-control" />
+                <span asp-validation-for="EdTitulo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EdFinalizado" class="control-label"></label>
+                <input asp-for="EdFinalizado" class="form-control" />
+                <span asp-validation-for="EdFinalizado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EdDescripcion" class="control-label"></label>
+                <input asp-for="EdDescripcion" class="form-control" />
+                <span asp-validation-for="EdDescripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EdEstado" class="control-label"></label>
+                <input asp-for="EdEstado" class="form-control" />
+                <span asp-validation-for="EdEstado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsCodigo" class="control-label"></label>
+                <select asp-for="UsCodigo" class="form-control" asp-items="ViewBag.UsCodigo"></select>
+                <span asp-validation-for="UsCodigo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

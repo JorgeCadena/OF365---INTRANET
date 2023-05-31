@@ -1,0 +1,69 @@
+﻿@model INTRANET_CR.Models.EventosTicket
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>EventosTicket</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EvtDescripcion" class="control-label"></label>
+                <input asp-for="EvtDescripcion" class="form-control" />
+                <span asp-validation-for="EvtDescripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EvtResponsable" class="control-label"></label>
+                <input asp-for="EvtResponsable" class="form-control" />
+                <span asp-validation-for="EvtResponsable" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EvtObservacion" class="control-label"></label>
+                <input asp-for="EvtObservacion" class="form-control" />
+                <span asp-validation-for="EvtObservacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EvtFecha" class="control-label"></label>
+                <input asp-for="EvtFecha" class="form-control" />
+                <span asp-validation-for="EvtFecha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EvtUsuario" class="control-label"></label>
+                <input asp-for="EvtUsuario" class="form-control" />
+                <span asp-validation-for="EvtUsuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EvtEmpresa" class="control-label"></label>
+                <input asp-for="EvtEmpresa" class="form-control" />
+                <span asp-validation-for="EvtEmpresa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EvtUsCod" class="control-label"></label>
+                <input asp-for="EvtUsCod" class="form-control" />
+                <span asp-validation-for="EvtUsCod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TicCodigo" class="control-label"></label>
+                <select asp-for="TicCodigo" class ="form-control" asp-items="ViewBag.TicCodigo"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

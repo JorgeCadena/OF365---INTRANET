@@ -1,0 +1,49 @@
+﻿@model INTRANET_CR.Models.Familiare
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Familiare</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FaIdentificacion" class="control-label"></label>
+                <input asp-for="FaIdentificacion" class="form-control" />
+                <span asp-validation-for="FaIdentificacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FaNombres" class="control-label"></label>
+                <input asp-for="FaNombres" class="form-control" />
+                <span asp-validation-for="FaNombres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FaRelacion" class="control-label"></label>
+                <input asp-for="FaRelacion" class="form-control" />
+                <span asp-validation-for="FaRelacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FaNacimiento" class="control-label"></label>
+                <input asp-for="FaNacimiento" class="form-control" />
+                <span asp-validation-for="FaNacimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsCodigo" class="control-label"></label>
+                <select asp-for="UsCodigo" class ="form-control" asp-items="ViewBag.UsCodigo"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

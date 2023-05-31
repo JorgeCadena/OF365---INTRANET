@@ -1,0 +1,49 @@
+﻿@model INTRANET_CR.Models.EventosSolicitude
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>EventosSolicitude</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EvsDescripcion" class="control-label"></label>
+                <input asp-for="EvsDescripcion" class="form-control" />
+                <span asp-validation-for="EvsDescripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EvsResponsable" class="control-label"></label>
+                <input asp-for="EvsResponsable" class="form-control" />
+                <span asp-validation-for="EvsResponsable" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EvsObservacion" class="control-label"></label>
+                <input asp-for="EvsObservacion" class="form-control" />
+                <span asp-validation-for="EvsObservacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EvsFecha" class="control-label"></label>
+                <input asp-for="EvsFecha" class="form-control" />
+                <span asp-validation-for="EvsFecha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SoCodigo" class="control-label"></label>
+                <select asp-for="SoCodigo" class ="form-control" asp-items="ViewBag.SoCodigo"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

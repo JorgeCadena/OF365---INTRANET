@@ -1,0 +1,36 @@
+﻿@model INTRANET_CR.Models.Paise
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Paise</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PaCodigo" />
+            <div class="form-group">
+                <label asp-for="PaPre" class="control-label"></label>
+                <input asp-for="PaPre" class="form-control" />
+                <span asp-validation-for="PaPre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaNombre" class="control-label"></label>
+                <input asp-for="PaNombre" class="form-control" />
+                <span asp-validation-for="PaNombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

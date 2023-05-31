@@ -1,0 +1,291 @@
+﻿@model INTRANET_CR.Models.Informacion
+
+@{
+    ViewData["Title"] = "Registro";
+}
+
+<div class="card theme-wizard mb-5" data-theme-wizard="data-theme-wizard">
+    <div class="card-header bg-100 pt-3 pb-2 border-bottom-0">
+        <ul class="nav justify-content-between nav-wizard" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link fw-semi-bold" href="#bootstrap-wizard-tab1" data-bs-toggle="tab" data-wizard-step="1" aria-selected="false" role="tab">
+                    <div class="text-center d-inline-block"><span class="nav-item-circle-parent"><span class="nav-item-circle"><svg class="svg-inline--fa fa-lock" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="lock" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M80 192V144C80 64.47 144.5 0 224 0C303.5 0 368 64.47 368 144V192H384C419.3 192 448 220.7 448 256V448C448 483.3 419.3 512 384 512H64C28.65 512 0 483.3 0 448V256C0 220.7 28.65 192 64 192H80zM144 192H304V144C304 99.82 268.2 64 224 64C179.8 64 144 99.82 144 144V192z"></path></svg><!-- <span class="fas fa-lock"></span> Font Awesome fontawesome.com --></span></span><span class="d-none d-md-block mt-1 fs--1">Cuenta</span></div>
+                </a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active fw-semi-bold" href="#bootstrap-wizard-tab2" data-bs-toggle="tab" data-wizard-step="2" aria-selected="true" tabindex="-1" role="tab">
+                    <div class="text-center d-inline-block"><span class="nav-item-circle-parent"><span class="nav-item-circle"><svg class="svg-inline--fa fa-user" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="user" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M224 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3C77.61 304 0 381.6 0 477.3c0 19.14 15.52 34.67 34.66 34.67h378.7C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z"></path></svg><!-- <span class="fas fa-user"></span> Font Awesome fontawesome.com --></span></span><span class="d-none d-md-block mt-1 fs--1">Información Personal</span></div>
+                </a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link fw-semi-bold" href="#bootstrap-wizard-tab3" data-bs-toggle="tab" data-wizard-step="3" aria-selected="false" tabindex="-1" role="tab">
+                    <div class="text-center d-inline-block"><span class="nav-item-circle-parent"><span class="nav-item-circle"><svg class="svg-inline--fa fa-file-lines" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-lines" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M256 0v128h128L256 0zM224 128L224 0H48C21.49 0 0 21.49 0 48v416C0 490.5 21.49 512 48 512h288c26.51 0 48-21.49 48-48V160h-127.1C238.3 160 224 145.7 224 128zM272 416h-160C103.2 416 96 408.8 96 400C96 391.2 103.2 384 112 384h160c8.836 0 16 7.162 16 16C288 408.8 280.8 416 272 416zM272 352h-160C103.2 352 96 344.8 96 336C96 327.2 103.2 320 112 320h160c8.836 0 16 7.162 16 16C288 344.8 280.8 352 272 352zM288 272C288 280.8 280.8 288 272 288h-160C103.2 288 96 280.8 96 272C96 263.2 103.2 256 112 256h160C280.8 256 288 263.2 288 272z"></path></svg><!-- <span class="fas fa-file-alt"></span> Font Awesome fontawesome.com --></span></span><span class="d-none d-md-block mt-1 fs--1">Aceptación</span></div>
+                </a>
+            </li>           
+        </ul>
+    </div>
+    <form asp-action="Registro">
+        <div class="card-body pt-4 pb-0">
+            <div class="tab-content">
+                <div class="tab-pane active" role="tabpanel" aria-labelledby="bootstrap-wizard-tab1" id="bootstrap-wizard-tab1">
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                   @* <div class="row g-4 mb-4" data-dropzone="data-dropzone" data-options='{"maxFiles":1,"data":[{"name":"avatar.png","size":"54kb","url":"~/img"}]}'>
+                        <div class="fallback">
+                            <input type="file" name="file" />
+                        </div>
+                        <div class="col-md-auto">
+                            <div class="dz-preview dz-preview-single">
+                                <div class="dz-preview-cover d-flex align-items-center justify-content-center mb-2 mb-md-0">
+                                    <div class="avatar avatar-4xl"><img class="rounded-circle avatar-placeholder" src="~/img/avatar.png" alt="..." data-dz-thumbnail="data-dz-thumbnail" /></div>
+                                    <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress=""></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="dz-message dropzone-area px-2 py-3" data-dz-message="data-dz-message">
+                                <div class="text-center text-1100">
+                                    <h5 class="mb-2"><span class="fa-solid fa-upload me-2"></span>Upload Profile Picture</h5>
+                                    <p class="mb-0 fs--1 text-600 lh-sm">Upload a 300x300 jpg image with <br />a maximum size of 400KB</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>*@
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="mb-2">
+                                <label asp-for="InfIdentificacion" class="form-label text-900"></label>
+                                <input asp-for="InfIdentificacion" class="form-control" />
+                                <span asp-validation-for="InfIdentificacion" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-2">
+                                <label asp-for="InfOrigen" class="form-label text-900"></label>
+                                @Html.DropDownList(
+                                "InfOrigen",
+                                new List<SelectListItem>
+                                {
+                                new SelectListItem{ Text="Nacional",Value = "Nacional" },
+                                new SelectListItem{ Text="Extranjero",Value = "Extranjero" }
+                                }, "Seleccione una opción",
+                                new { @class = "form-select"})
+                                <span asp-validation-for="InfOrigen" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="mb-2">
+                                <label asp-for="InfEtnia" class="form-label text-900"></label>
+                                @Html.DropDownList(
+                                "InfEtnia",
+                                new List<SelectListItem>
+                                {
+                                new SelectListItem{ Text="Mestizo",Value = "Mestizo" },
+                                new SelectListItem{ Text="Montubio",Value = "Montubio" },
+                                new SelectListItem{ Text="Afroecuatoriano",Value = "Afroecuatoriano" },
+                                new SelectListItem{ Text="Indígena",Value = "Indígena" },
+                                new SelectListItem{ Text="Blanco",Value = "Blanco" }
+                                }, "Seleccione una opción",
+                                new { @class = "form-select"})
+                                <span asp-validation-for="InfEtnia" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-2">
+                                <label asp-for="InfGenero" class="form-label text-900"></label>
+                                @Html.DropDownList(
+                                "InfGenero",
+                                new List<SelectListItem>
+                                {
+                                new SelectListItem{ Text="Hombre",Value = "Hombre" },
+                                new SelectListItem{ Text="Mujer",Value = "Mujer" }
+                                }, "Seleccione una opción",
+                                new { @class = "form-select"})
+                                <span asp-validation-for="InfGenero" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="mb-2">
+                                <label asp-for="InfSangre" class="form-label text-900"></label>
+                                @Html.DropDownList(
+                                "InfSangre",
+                                new List<SelectListItem>
+                                {
+                                new SelectListItem{ Text="A positivo (A+)",Value = "A positivo (A +)" },
+                                new SelectListItem{ Text="A negativo (A-)",Value = "A negativo (A-)" },
+                                new SelectListItem{ Text="B positivo (B+)",Value = "B positivo (B+)" },
+                                new SelectListItem{ Text="B negativo (B-)",Value = "B positivo (B-)" },
+                                new SelectListItem{ Text="AB positivo (AB+)",Value = "AB positivo (AB+)" },
+                                new SelectListItem{ Text="AB negativo (AB-)",Value = "AB negativo (AB-)" },
+                                new SelectListItem{ Text="O positivo (O+)",Value = "O positivo (O+)" },
+                                new SelectListItem{ Text="O negativo (O-)",Value = "O negativo (O-)" }
+                                }, "Seleccione una opción",
+                                new { @class = "form-select"})
+                                <span asp-validation-for="InfSangre" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-2">
+                                <label asp-for="InfMigranteRetornado" class="form-label text-900"></label>
+                                @Html.DropDownList(
+                                "InfMigranteRetornado",
+                                new List<SelectListItem>
+                                {
+                                new SelectListItem{ Text="Sí",Value = "Sí" },
+                                new SelectListItem{ Text="No",Value = "No" }
+                                }, "Seleccione una opción",
+                                new { @class = "form-select"})
+                                <span asp-validation-for="InfMigranteRetornado" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="mb-2">
+                                <label asp-for="InfEstadoCivil" class="form-label text-900"></label>
+                                @Html.DropDownList(
+                                "InfEstadoCivil",
+                                new List<SelectListItem>
+                                {
+                                new SelectListItem{ Text="Soltero/a",Value = "Soltero/a" },
+                                new SelectListItem{ Text="Casado/a",Value = "Casado/a" },
+                                new SelectListItem{ Text="Viudo/a",Value = "Viudo/a" },
+                                new SelectListItem{ Text="Divorciado/a",Value = "Divorciado/a" },
+                                new SelectListItem{ Text="Unión de hecho",Value = "Unión de hecho" }
+                                }, "Seleccione una opción",
+                                new { @class = "form-select"})
+                                <span asp-validation-for="InfEstadoCivil" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-2">
+                                <label asp-for="InfDireccion" class="form-label text-900"></label>
+                                <input asp-for="InfDireccion" class="form-control" />
+                                <span asp-validation-for="InfDireccion" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="mb-2">
+                                <label asp-for="InfProvincia" class="form-label text-900"></label>
+                                <input asp-for="InfProvincia" class="form-control" />
+                                <span asp-validation-for="InfCiudad" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-2">
+                                <label asp-for="InfCiudad" class="form-label text-900"></label>
+                                <input asp-for="InfCiudad" class="form-control" />
+                                <span asp-validation-for="InfCiudad" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="mb-2">
+                                <label asp-for="InfDiscapacidad" class="form-label text-900"></label>
+                                <input asp-for="InfDiscapacidad" class="form-control" />
+                                <span asp-validation-for="InfDiscapacidad" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-2">
+                                <label asp-for="InfPorcentajeDiscapacidad" class="form-label text-900"></label>
+                                <input asp-for="InfPorcentajeDiscapacidad" class="form-control" />
+                                <span asp-validation-for="InfPorcentajeDiscapacidad" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="mb-2">
+                                <label asp-for="InfTelefono" class="form-label text-900"></label>
+                                <input asp-for="InfTelefono" class="form-control" />
+                                <span asp-validation-for="InfTelefono" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-2">
+                                <label asp-for="InfMail" class="form-label text-900"></label>
+                                <input asp-for="InfMail" class="form-control" />
+                                <span asp-validation-for="InfMail" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="mb-2">
+                                <label asp-for="InfLugarNacimiento" class="form-label text-900"></label>
+                                <input asp-for="InfLugarNacimiento" class="form-control" />
+                                <span asp-validation-for="InfLugarNacimiento" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-2">
+                                <label asp-for="InfFechaNacimiento" class="form-label text-900"></label>
+                                <input asp-for="InfFechaNacimiento" type="date" class="form-control" />
+                                <span asp-validation-for="InfFechaNacimiento" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <h5 class="text-center">Contacto de emergencia</h5>
+                    <hr />
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="mb-2">
+                                <label asp-for="InfNombreContacto" class="form-label text-900"></label>
+                                <input asp-for="InfNombreContacto" class="form-control" />
+                                <span asp-validation-for="InfNombreContacto" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-2">
+                                <label asp-for="InfTelefonoContacto" class="form-label text-900"></label>
+                                <input asp-for="InfTelefonoContacto" class="form-control" />
+                                <span asp-validation-for="InfTelefonoContacto" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="mb-2">
+                                <label asp-for="InfRelacion" class="form-label text-900"></label>
+                                <input asp-for="InfRelacion" class="form-control" />
+                                <span asp-validation-for="InfRelacion" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-2">
+                                <label asp-for="InfObservaciones" class="form-label text-900"></label>
+                                <input asp-for="InfObservaciones" class="form-control" />
+                                <span asp-validation-for="InfObservaciones" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <input asp-for="InfFoto" class="form-control" type="hidden"/>
+                    <input asp-for="InfNombreFoto" class="form-control" type="hidden" />
+                    <input asp-for="UsCodigo" type="hidden" class="form-control" value="@ViewData["UsCodigo"]" />
+                </div>
+            </div>           
+        </div>
+        <div class="card-footer border-top-0" data-wizard-footer="data-wizard-footer">
+            <div class="d-flex pager wizard list-inline mb-0">
+                <button class="d-none btn btn-link ps-0" type="button" data-wizard-prev-btn="data-wizard-prev-btn"><span class="fas fa-chevron-left me-1" data-fa-transform="shrink-3"></span>Previous</button>
+                <div class="flex-1 text-end">
+                    <input type="submit" value="Siguiente" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,283 @@
+﻿@model INTRANET_CR.Models.Cliente
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <div class="d-sm-flex align-items-center justify-content-between mb-0">
+            <h4 class="card-title"><b>Cliente</b> - @Html.DisplayFor(model => model.CliNombre)</h4>
+        </div>
+    </div>
+    <div class="card-body offset-1 col-10 font-italic">
+        <h5 class="text-center form-label ">Datos generales</h5>
+        <hr />
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="font-weight-bold form-label form-label">
+                            @Html.DisplayNameFor(model => model.CliNombre)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.CliNombre)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="font-weight-bold form-label form-label">
+                            @Html.DisplayNameFor(model => model.CliRazonSocial)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.CliRazonSocial)
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+        <div class="row">
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="font-weight-bold form-label">
+                            @Html.DisplayNameFor(model => model.CliComercial)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.CliComercial)
+                            @*@Html.Action("GetUserName", "TbClientes", new { id = Model.CliComercial })*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="font-weight-bold form-label">
+                            @Html.DisplayNameFor(model => model.CliEncargado)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.CliEncargado)
+                            @*@Html.Action("GetUserName", "TbClientes", new { id = Model.CliEncargado })*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="font-weight-bold form-label">
+                            @Html.DisplayNameFor(model => model.CliImpuestos)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.CliImpuestos)
+                        </div>
+                    </div>
+                </div>
+            </div>          
+        </div>
+        <hr />
+        <h6 class="text-center form-label ">Datos de facturación</h6>
+        <hr />
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="font-weight-bold form-label">
+                            @Html.DisplayNameFor(model => model.CliTipoIdentificacion)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.CliTipoIdentificacion)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="font-weight-bold form-label">
+                            @Html.DisplayNameFor(model => model.CliIdentificacion)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.CliIdentificacion)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="font-weight-bold form-label">
+                            @Html.DisplayNameFor(model => model.CliPostal)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.CliPostal)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="font-weight-bold form-label">
+                            @Html.DisplayNameFor(model => model.CliPais)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.CliPais)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="font-weight-bold form-label">
+                            @Html.DisplayNameFor(model => model.CliCiudad)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.CliCiudad)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="font-weight-bold form-label">
+                            @Html.DisplayNameFor(model => model.CliTelefono)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.CliTelefono)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="font-weight-bold form-label">
+                            @Html.DisplayNameFor(model => model.CliDireccion)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.CliDireccion)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <h6 class="text-center form-label ">Datos del solicitante</h6>
+        <hr />
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="font-weight-bold form-label">
+                            @Html.DisplayNameFor(model => model.CliSolicitante)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.CliSolicitante)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="font-weight-bold form-label">
+                            @Html.DisplayNameFor(model => model.CliTelefonoSol)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.CliTelefonoSol)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="font-weight-bold form-label">
+                            @Html.DisplayNameFor(model => model.CliMailSol)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.CliMailSol)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="font-weight-bold form-label">
+                            @Html.DisplayNameFor(model => model.CliDireccionSol)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.CliDireccionSol)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="font-weight-bold form-label">
+                            @Html.DisplayNameFor(model => model.CliTarifa)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.CliTarifa)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="font-weight-bold form-label">
+                            @Html.DisplayNameFor(model => model.CliDescuento)
+                        </div>
+
+                        <div>
+                            @Html.DisplayFor(model => model.CliDescuento)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <a class="btn btn-outline-primary" href="@Url.Action("Edit", "Clientes" , new { id=Model.CliCodigo } )"><spam>Editar</spam></a>
+        <a class="btn btn-outline-secondary " href="@Url.Action("Index", "Clientes" )"><spam>Cancelar</spam></a>
+        <p class="float-right float-end"><spam>Creado por:@* @Html.Action("GetUserNameByCodigo", "TbClientes", new { id = Model.UsCodigo })*@</spam></p>
+    </div>
+</div>
+

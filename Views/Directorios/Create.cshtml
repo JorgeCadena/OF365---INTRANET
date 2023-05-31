@@ -1,0 +1,124 @@
+﻿@model INTRANET_CR.Models.Directorio
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Directorio</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DirCliente" class="control-label"></label>
+                <input asp-for="DirCliente" class="form-control" />
+                <span asp-validation-for="DirCliente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DirArea" class="control-label"></label>
+                <input asp-for="DirArea" class="form-control" />
+                <span asp-validation-for="DirArea" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DirIndustria" class="control-label"></label>
+                <input asp-for="DirIndustria" class="form-control" />
+                <span asp-validation-for="DirIndustria" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DirDetalle" class="control-label"></label>
+                <input asp-for="DirDetalle" class="form-control" />
+                <span asp-validation-for="DirDetalle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DirCosto" class="control-label"></label>
+                <input asp-for="DirCosto" class="form-control" />
+                <span asp-validation-for="DirCosto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DirInvolucrados" class="control-label"></label>
+                <input asp-for="DirInvolucrados" class="form-control" />
+                <span asp-validation-for="DirInvolucrados" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DirEncargados" class="control-label"></label>
+                <input asp-for="DirEncargados" class="form-control" />
+                <span asp-validation-for="DirEncargados" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DirMiembros" class="control-label"></label>
+                <input asp-for="DirMiembros" class="form-control" />
+                <span asp-validation-for="DirMiembros" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DirOtros" class="control-label"></label>
+                <input asp-for="DirOtros" class="form-control" />
+                <span asp-validation-for="DirOtros" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DirInicio" class="control-label"></label>
+                <input asp-for="DirInicio" class="form-control" />
+                <span asp-validation-for="DirInicio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DirFin" class="control-label"></label>
+                <input asp-for="DirFin" class="form-control" />
+                <span asp-validation-for="DirFin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DirAdicional" class="control-label"></label>
+                <input asp-for="DirAdicional" class="form-control" />
+                <span asp-validation-for="DirAdicional" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DirCreado" class="control-label"></label>
+                <input asp-for="DirCreado" class="form-control" />
+                <span asp-validation-for="DirCreado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DirModificado" class="control-label"></label>
+                <input asp-for="DirModificado" class="form-control" />
+                <span asp-validation-for="DirModificado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DirRevisado" class="control-label"></label>
+                <input asp-for="DirRevisado" class="form-control" />
+                <span asp-validation-for="DirRevisado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DirConfidencial" class="control-label"></label>
+                <input asp-for="DirConfidencial" class="form-control" />
+                <span asp-validation-for="DirConfidencial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DirDescripcion" class="control-label"></label>
+                <input asp-for="DirDescripcion" class="form-control" />
+                <span asp-validation-for="DirDescripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DirFechaIngreso" class="control-label"></label>
+                <input asp-for="DirFechaIngreso" class="form-control" />
+                <span asp-validation-for="DirFechaIngreso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DirNumeroCaso" class="control-label"></label>
+                <input asp-for="DirNumeroCaso" class="form-control" />
+                <span asp-validation-for="DirNumeroCaso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmCodigo" class="control-label"></label>
+                <select asp-for="EmCodigo" class ="form-control" asp-items="ViewBag.EmCodigo"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

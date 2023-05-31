@@ -1,0 +1,84 @@
+﻿@model INTRANET_CR.Models.Experiencium
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Experiencium</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ExEmpresa" class="control-label"></label>
+                <input asp-for="ExEmpresa" class="form-control" />
+                <span asp-validation-for="ExEmpresa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExDireccion" class="control-label"></label>
+                <input asp-for="ExDireccion" class="form-control" />
+                <span asp-validation-for="ExDireccion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExTelefono" class="control-label"></label>
+                <input asp-for="ExTelefono" class="form-control" />
+                <span asp-validation-for="ExTelefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExCargoinicial" class="control-label"></label>
+                <input asp-for="ExCargoinicial" class="form-control" />
+                <span asp-validation-for="ExCargoinicial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExSueldoinicial" class="control-label"></label>
+                <input asp-for="ExSueldoinicial" class="form-control" />
+                <span asp-validation-for="ExSueldoinicial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExCargofinal" class="control-label"></label>
+                <input asp-for="ExCargofinal" class="form-control" />
+                <span asp-validation-for="ExCargofinal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExSueldofinal" class="control-label"></label>
+                <input asp-for="ExSueldofinal" class="form-control" />
+                <span asp-validation-for="ExSueldofinal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExMotivorenuncia" class="control-label"></label>
+                <input asp-for="ExMotivorenuncia" class="form-control" />
+                <span asp-validation-for="ExMotivorenuncia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExEstado" class="control-label"></label>
+                <input asp-for="ExEstado" class="form-control" />
+                <span asp-validation-for="ExEstado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExDescripcion" class="control-label"></label>
+                <input asp-for="ExDescripcion" class="form-control" />
+                <span asp-validation-for="ExDescripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExTiempo" class="control-label"></label>
+                <input asp-for="ExTiempo" class="form-control" />
+                <span asp-validation-for="ExTiempo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsCodigo" class="control-label"></label>
+                <select asp-for="UsCodigo" class ="form-control" asp-items="ViewBag.UsCodigo"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

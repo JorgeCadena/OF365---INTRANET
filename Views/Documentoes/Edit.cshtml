@@ -1,0 +1,56 @@
+﻿@model INTRANET_CR.Models.Documento
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Documento</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="DocCodigo" />
+            <div class="form-group">
+                <label asp-for="DocTipo" class="control-label"></label>
+                <input asp-for="DocTipo" class="form-control" />
+                <span asp-validation-for="DocTipo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DocDescripcion" class="control-label"></label>
+                <input asp-for="DocDescripcion" class="form-control" />
+                <span asp-validation-for="DocDescripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DocPeriodo" class="control-label"></label>
+                <input asp-for="DocPeriodo" class="form-control" />
+                <span asp-validation-for="DocPeriodo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DocEstado" class="control-label"></label>
+                <input asp-for="DocEstado" class="form-control" />
+                <span asp-validation-for="DocEstado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DocFecha" class="control-label"></label>
+                <input asp-for="DocFecha" class="form-control" />
+                <span asp-validation-for="DocFecha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsCodigo" class="control-label"></label>
+                <select asp-for="UsCodigo" class="form-control" asp-items="ViewBag.UsCodigo"></select>
+                <span asp-validation-for="UsCodigo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
